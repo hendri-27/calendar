@@ -258,12 +258,12 @@ while (true) {
   const inputYear = Number(readlineSync.question('Enter full year (e.g., 2001): '));
   const inputMonth = Number(readlineSync.question(`Enter month in number between ${Month.JANUARY + 1} and ${Month.DECEMBER + 1}: `));
   
-  if (!Number.isFinite(inputYear) || Number.isNaN(inputYear) || inputYear < 0) {
+  if (!Number.isFinite(inputYear) || Number.isNaN(inputYear) || inputYear < BASE_YEAR) {
     console.log('Please input valid year!\n');
     continue;
   }
   
-  if (!Number.isFinite(inputMonth) || Number.isNaN(inputMonth) || !Object.values(Month).includes(inputMonth)) {
+  if (!Number.isFinite(inputMonth) || Number.isNaN(inputMonth) || !Object.values(Month).includes(inputMonth - 1)) {
     console.log('Please input valid month!\n');
     continue;
   }
